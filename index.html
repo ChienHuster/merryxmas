@@ -112,7 +112,7 @@
     <div id="canvas-container"></div>
     <canvas id="firework-canvas"></canvas>
 
-    <div id="secret-message">MERRY CHRISTMAS Torie Eira</div>
+    <div id="secret-message">MERRY CHRISTMAS     Torie Eira</div>
 
     <div id="ui-layer">
         <h1 id="main-title">Merry Xmas</h1>
@@ -432,7 +432,7 @@
                 const canvas = document.createElement('canvas'); canvas.width = 256; canvas.height = 300; const ctx = canvas.getContext('2d');
                 ctx.fillStyle = '#fdfdfd'; ctx.fillRect(0, 0, 256, 300); ctx.fillStyle = '#eee'; ctx.fillRect(15, 15, 226, 226);
                 const texture = new THREE.CanvasTexture(canvas); texture.colorSpace = THREE.SRGBColorSpace; polaroidTextures.push(texture);
-                const path = `./images/${i}.JPG?v=${cacheBuster}`;
+                const path = `./images/${i}.png?v=${cacheBuster}`;
                 imgLoader.load(path, (image) => {
                     ctx.fillStyle = '#fdfdfd'; ctx.fillRect(0, 0, 256, 300); ctx.drawImage(image, 15, 15, 226, 226);
                     ctx.fillStyle = '#111'; ctx.font = '24px Pinyon Script'; ctx.textAlign = 'center'; ctx.fillText(`Moment ${i}`, 128, 275);
@@ -506,7 +506,7 @@
             const now = clock.getElapsedTime(); if (now - lastSwitchTime < SWITCH_COOLDOWN) return; 
             lastSwitchTime = now; isGalleryMode = !isGalleryMode; const indicator = document.getElementById('mode-indicator');
             if (isGalleryMode) {
-                indicator.innerText = "MODE: PHOTO GALLERY"; 
+                indicator.innerText = "by: Lang Hoang Ma Chien "; 
                 indicator.style.color = "#FFD700"; 
                 
                 gsap.to(window, { duration: 1.2, jarOffsetY: -8, ease: "power2.inOut" }); 
@@ -519,7 +519,7 @@
                     gsap.to(polaroid.material, { opacity: 1, duration: 0.8, delay: index * 0.03 });
                 });
             } else {
-                indicator.innerText = "MODE: JAR CONTROL"; 
+                indicator.innerText = "Torie Eira"; 
                 indicator.style.color = "rgba(255, 215, 0, 0.7)"; 
                 
                 gsap.to(window, { duration: 1.2, jarOffsetY: 0, ease: "back.out(0.8)", delay: 0.2 }); 
